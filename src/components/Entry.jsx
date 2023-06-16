@@ -1,15 +1,14 @@
 import React from "react";
+import Title from "./Title.jsx";
 
 function Entry(props) {
   return (
     <div className="term">
       {/* TITLE */}
-      <dt>
-        <span className="emoji" role="img" aria-label={props.name}>
-          {props.emoji}
-        </span>
-        <span>{props.name}</span>
-      </dt>
+      <Title 
+        name={props.name}
+        emoji={props.emoji}
+      />
       {/* DESCRIPTION */}
       <dd>
         {props.meaning}
