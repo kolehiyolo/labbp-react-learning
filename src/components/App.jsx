@@ -1,22 +1,17 @@
 import React from "react";
 import Header from "./Header.jsx";
+import Entry from "./Entry.jsx";
 import emojipedia from "../emojipedia.js";
 
 function createEntry(entry) {
   return (
-    <div className="term">
-      {/* TITLE */}
-      <dt>
-        <span className="emoji" role="img" aria-label={entry.name}>
-          {entry.emoji}
-        </span>
-        <span>{entry.name}</span>
-      </dt>
-      {/* DESCRIPTION */}
-      <dd>
-        {entry.meaning}
-      </dd>
-    </div>
+    <Entry 
+      key={entry.id}
+      id={entry.id}
+      emoji={entry.emoji}
+      name={entry.name}
+      meaning={entry.meaning}
+    />
   )
 }
 
