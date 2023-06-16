@@ -2,20 +2,19 @@ import React from "react";
 import Header from "./Header.jsx";
 import emojipedia from "../emojipedia.js";
 
-function createEntry() {
+function createEntry(entry) {
   return (
     <div className="term">
       {/* TITLE */}
       <dt>
-        <span className="emoji" role="img" aria-label="Tense Biceps">
-          💪
+        <span className="emoji" role="img" aria-label={entry.name}>
+          {entry.emoji}
         </span>
-        <span>Tense Biceps</span>
+        <span>{entry.name}</span>
       </dt>
       {/* DESCRIPTION */}
       <dd>
-        “You can do that!” or “I feel strong!” Arm with tense biceps. Also
-        used in connection with doing sports, e.g. at the gym.
+        {entry.meaning}
       </dd>
     </div>
   )
