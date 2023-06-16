@@ -3,18 +3,22 @@ import React from "react";
 function App() {
   return (
     <div>
+      {/* HEADER */}
       <h1>
         <span>emojipedia</span>
       </h1>
-
+      {/* DICTIONARY */}
       <dl className="dictionary">
+        {/* TERM */}
         <div className="term">
+          {/* TITLE */}
           <dt>
             <span className="emoji" role="img" aria-label="Tense Biceps">
               💪
             </span>
             <span>Tense Biceps</span>
           </dt>
+          {/* DESCRIPTION */}
           <dd>
             “You can do that!” or “I feel strong!” Arm with tense biceps. Also
             used in connection with doing sports, e.g. at the gym.
