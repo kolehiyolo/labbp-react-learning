@@ -92,4 +92,18 @@
 // Each meaning text should be truncated so that it only has 100 characters
 // Use substring()
 
+// -* Verbose Solution
+import emojipedia from "./emojipedia.js";
 
+function getMeaningOnly(entry) {
+  return entry.meaning.substring(0,100);
+}
+
+const newArray = emojipedia.map(getMeaningOnly);
+
+console.log(newArray); 
+
+// -* Compact and Dev-unfriendly Solution
+// import emojipedia from "./emojipedia.js";
+
+// console.log(emojipedia.map((entry) => entry.meaning.substring(0,100))); 
