@@ -1,5 +1,6 @@
 import React from "react";
 import Title from "./Title.jsx";
+import Description from "./Description.jsx";
 
 function Entry(props) {
   return (
@@ -10,9 +11,9 @@ function Entry(props) {
         emoji={props.emoji}
       />
       {/* DESCRIPTION */}
-      <dd>
-        {props.meaning}
-      </dd>
+      <Description 
+        meaning={props.meaning}
+      />
     </div>
   )
 }
