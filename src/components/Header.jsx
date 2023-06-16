@@ -1,7 +1,9 @@
-import React from "Header";
+import React from "react";
 
 function Header(props) {
-  return
+  return (<h1>
+    <span>emojipedia</span>
+  </h1>);
 }
 
 export default Header;

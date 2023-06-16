@@ -1,12 +1,10 @@
 import React from "react";
+import Header from "./Header.jsx";
 
 function App() {
   return (
     <div>
-      {/* HEADER */}
-      <h1>
-        <span>emojipedia</span>
-      </h1>
+      <Header />
       {/* DICTIONARY */}
       <dl className="dictionary">
         {/* TERM */}
