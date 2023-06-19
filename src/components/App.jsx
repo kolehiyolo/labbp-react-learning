@@ -4,10 +4,12 @@ var isDone = false;
 
 function strike() {
   isDone = true;
+  document.getElementById("root").style.textDecoration = "line-through";
 }
 
 function unStrike() {
   isDone = false;
+  document.getElementById("root").style.textDecoration = null;
 }
 
 function App() {
