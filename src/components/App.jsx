@@ -6,23 +6,43 @@ let isLoggedIn = false;
 
 function App() {
   function checkLoginThenRender() {
-    if (isLoggedIn) {
-      return (
+    // if (isLoggedIn) {
+    //   return (
+    //     <h1>Welcome</h1>
+    //   );
+    // } else {
+    //   return (
+    //     <>
+    //       <h1>Hello</h1>
+    //       <Login />
+    //     </>
+    //   );
+    // }
+    return isLoggedIn
+      ?
         <h1>Welcome</h1>
-      );
-    } else {
-      return (
-        <>
-          <h1>Hello</h1>
-          <Login />
-        </>
-      );
-    }
+      :
+        (
+          <>
+            <h1>Hello</h1>
+            <Login />
+          </>
+        );
   }
 
   return (
     <div className="container">
-      {checkLoginThenRender()}
+      {/* {checkLoginThenRender()} */}
+      {isLoggedIn
+      ?
+        <h1>Welcome</h1>
+      :
+        (
+          <>
+            <h1>Hello</h1>
+            <Login />
+          </>
+        )}
     </div>
   );
 }
