@@ -4,6 +4,8 @@ import Login from "./Login.jsx";
 let isLoggedIn = false;
 // let isLoggedIn = true;
 
+const currentTime = new Date().getHours();
+
 function App() {
   return (
     <div className="container">
@@ -15,6 +17,9 @@ function App() {
               <Login />
             </>
           )
+      }
+      {
+        currentTime && <p>Why are you still working</p>
       }
     </div>
   );
