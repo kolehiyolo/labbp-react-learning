@@ -1,4 +1,5 @@
 import React from "react";
+import Login from "./Login.jsx";
 
 let isLoggedIn = false;
 // let isLoggedIn = true;
@@ -13,11 +14,7 @@ function App() {
       return (
         <>
           <h1>Hello</h1>
-          <form className="form">
-            <input type="text" placeholder="Username" />
-            <input type="password" placeholder="Password" />
-            <button type="submit">Login</button>
-          </form>
+          <Login />
         </>
       );
     }
