@@ -1,22 +1,21 @@
 import React, {useState} from "react";
 
 function App() {
-  const state = useState(254);
-  let count = 0;
-
-  const rgb = [41, 128, 185];
-
-  console.log(state[0]); 
+  const [count, setCount] = useState(254);
 
   function increase() {
-    count++;
-    console.log(`Increasing count to ${count}`); 
+    setCount(count + 1);
+  }
+
+  function decrease() {
+    setCount(count - 1);
   }
 
   return (
     <div className="container">
-      <h1>{state[0]}</h1>
+      <h1>{count}</h1>
       <button onClick={increase}>+</button>
+      <button onClick={decrease}>-</button>
     </div>
   );
 }
