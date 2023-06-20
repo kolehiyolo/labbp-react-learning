@@ -1,33 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React, {useState} from "react";
 
 function App() {
-  let count = 0;
-
-  const root = ReactDOM.createRoot(document.getElementById('root'));
+  const [count, setCount] = useState(0);
 
   function increaseCount() {
-    count++;
-    console.log(count); 
-    root.render(
-      <div>
-        <h1>{count}</h1>
-        <button onClick={increaseCount}>+</button>
-        <button onClick={decreaseCount}>-</button>
-      </div>
-    );
+    setCount(count + 1);
   }
   
   function decreaseCount() {
-    count--;
-    console.log(count); 
-    root.render(
-      <div>
-        <h1>{count}</h1>
-        <button onClick={increaseCount}>+</button>
-        <button onClick={decreaseCount}>-</button>
-      </div>
-    );
+    setCount(count - 1);
   }
 
   return (
