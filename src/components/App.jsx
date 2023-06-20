@@ -1,21 +1,40 @@
-import React, {useState} from "react";
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 function App() {
-  const [count, setCount] = useState(254);
+  let count = 0;
 
-  function increase() {
-    setCount(count + 1);
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+
+  function increaseCount() {
+    count++;
+    console.log(count); 
+    root.render(
+      <div>
+        <h1>{count}</h1>
+        <button onClick={increaseCount}>+</button>
+        <button onClick={decreaseCount}>-</button>
+      </div>
+    );
   }
-
-  function decrease() {
-    setCount(count - 1);
+  
+  function decreaseCount() {
+    count--;
+    console.log(count); 
+    root.render(
+      <div>
+        <h1>{count}</h1>
+        <button onClick={increaseCount}>+</button>
+        <button onClick={decreaseCount}>-</button>
+      </div>
+    );
   }
 
   return (
-    <div className="container">
+    <div>
       <h1>{count}</h1>
-      <button onClick={increase}>+</button>
-      <button onClick={decrease}>-</button>
+      <button onClick={increaseCount}>+</button>
+      <button onClick={decreaseCount}>-</button>
     </div>
   );
 }
