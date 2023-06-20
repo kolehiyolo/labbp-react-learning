@@ -7,6 +7,8 @@ function App() {
     setCurrentTime(new Date().toLocaleTimeString());
   }
 
+  setInterval(getCurrentTime, 1000);
+
   return (
     <div className="container">
       <h1>{currentTime}</h1>
