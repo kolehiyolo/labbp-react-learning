@@ -1,25 +1,26 @@
+
 // CHALLENGE: uncomment the code below and see the car stats rendered
 import React from "react";
 import ReactDOM from "react-dom/client";
 
 import cars from "./practice.js";
 
-const [tesla, honda] = cars;
+const [honda, tesla] = cars;
 
 const [
+  {
+    coloursByPopularity: [hondaTopColour],
+    speedStats: {
+      topSpeed: hondaTopSpeed
+    },
+  },
   {
     coloursByPopularity: [teslaTopColour],
     speedStats: {
       topSpeed: teslaTopSpeed
     },
   },
-  {
-    coloursByPopularity: [hondaTopColour],
-    speedStats: {
-      topSpeed: hondaTopSpeed
-    },
-  }
- ] = cars;
+] = cars;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
