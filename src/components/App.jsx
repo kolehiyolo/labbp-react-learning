@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 function App() {
   const [headingText, setHeadingText] = useState('Hello');
-  const [buttonStyle, setButtonStyle] = useState();
+  const [buttonIsHovered, setButtonIsHovered] = useState(false);
 
   function handleClick() {
     console.log(`Clicked`); 
@@ -13,12 +13,12 @@ function App() {
 
   function handleOnMouseOver() {
     console.log(`handleOnMouseOver()`); 
-    setButtonStyle({background: "black", color: "white"});
+    setButtonIsHovered(true);
   }
   
   function handleOnMouseOut() {
     console.log(`handleOnMouseOut()`); 
-    setButtonStyle();
+    setButtonIsHovered(false);
   }
 
   return (
@@ -29,7 +29,12 @@ function App() {
         onClick={handleClick}
         onMouseOver={handleOnMouseOver}
         onMouseOut={handleOnMouseOut}
-        style={buttonStyle}
+        style={
+          {
+            backgroundColor: buttonIsHovered ? "black" : "white",
+            color: buttonIsHovered ? "white" : null,
+          }
+        }
       >Submit</button>
     </div>
   );
