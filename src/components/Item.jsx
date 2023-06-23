@@ -1,7 +1,7 @@
 import React from "react";
 
-function Item() {
-  return <li></li>;
+function Item(props) {
+  return <li>{props.value}</li>;
 }
 
 export default Item;

@@ -21,6 +21,10 @@ function App() {
     event.preventDefault();
   }
 
+  function renderListItem(listItem, index) {
+    return <Item key={index} value={listItem}/>;
+  }
+
   return (
     <div className="container">
       <div className="heading">
@@ -34,7 +38,7 @@ function App() {
       </form>
       <div>
         <ul>
-          <li>A Item</li>
+          {todoArray.map(renderListItem)};
         </ul>
       </div>
     </div>
