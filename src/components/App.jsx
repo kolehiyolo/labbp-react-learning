@@ -5,37 +5,26 @@ function App() {
   const [inputValue, setInputValue] = useState('');
   const [todoArray, setTodoArray] = useState([]);
 
-  function updateInputValue(event) {
-    const newInput = event.target.value;
-    setInputValue(newInput);
-  }
-
-  function addTodoItem(event) {
-    setTodoArray((prevValue) => {
-      return [...prevValue, inputValue];
-    });
-
-    event.preventDefault();
-  }
-
-  function renderListItem(listItem, index) {
-    return <Item key={index} value={listItem}/>;
-  }
-
   return (
     <div className="container">
       <div className="heading">
         <h1>To-Do List</h1>
       </div>
       <form className="form">
-        <input onChange={updateInputValue} type="text" />
-        <button onClick={addTodoItem} type="submit">
+        <input onChange={(event) => {setInputValue(event.target.value)}} type="text" />
+        <button 
+          onClick={(event) => {
+            setTodoArray((prevValue) => [...prevValue, inputValue]);
+            event.preventDefault();
+          }}
+          type="submit"
+        >
           <span>Add</span>
         </button>
       </form>
       <div>
         <ul>
-          {todoArray.map(renderListItem)};
+          {todoArray.map((listItem, index) => <Item key={index} value={listItem}/>)};
         </ul>
       </div>
     </div>
