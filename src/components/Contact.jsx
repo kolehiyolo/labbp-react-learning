@@ -4,6 +4,7 @@ function Contact() {
   return (
     <div>
       <h2>Hello Dude</h2>
+      <p>s</p>
     </div>
   );
 }
