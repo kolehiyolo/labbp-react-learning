@@ -6,14 +6,11 @@ function App() {
   const [todoArray, setTodoArray] = useState([]);
 
   function updateInputValue(event) {
-    console.log(`Input updated`); 
     const newInput = event.target.value;
     setInputValue(newInput);
   }
 
   function addTodoItem(event) {
-    console.log(`Add button pressed`); 
-
     setTodoArray((prevValue) => {
       return [...prevValue, inputValue];
     });
