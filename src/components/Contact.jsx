@@ -2,7 +2,9 @@ import React from "react";
 
 function Contact() {
   return (
-    <div></div>
+    <div>
+      <h1>Hello World!</h1>
+    </div>
   );
 }
 
