@@ -11,10 +11,11 @@ function App() {
         <h1>To-Do List</h1>
       </div>
       <form className="form">
-        <input onChange={(event) => {setInputValue(event.target.value)}} type="text" />
+        <input onChange={(event) => {setInputValue(event.target.value)}} type="text" value={inputValue} />
         <button 
           onClick={(event) => {
             setTodoArray((prevValue) => [...prevValue, inputValue]);
+            setInputValue('');
             event.preventDefault();
           }}
           type="submit"
