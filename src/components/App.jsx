@@ -7,6 +7,36 @@ function App() {
     email: ""
   });
 
+  function updateContact(event) {
+    const {value, name} = event.target;
+
+    setContact((prevValue) => {
+      const newContact = {
+        fName: prevValue.fName,
+        lName: prevValue.lName,
+        email: prevValue.email,
+      };
+
+      switch(name) {
+        case "fName":
+          newContact.fName = value;
+          break;
+        case "lName":
+          newContact.lName = value;
+          break;
+        case "email":
+          newContact.email = value;
+          break;
+        default:
+          return newContact;
+      }
+
+      return newContact;
+    })
+
+    event.preventDefault();
+  }
+
   return (
     <div className="container">
       <h1>
@@ -14,9 +44,9 @@ function App() {
       </h1>
       <p>{contact.email}</p>
       <form>
-        <input name="fName" placeholder="First Name" />
-        <input name="lName" placeholder="Last Name" />
-        <input name="email" placeholder="Email" />
+        <input onChange={updateContact} name="fName" placeholder="First Name" />
+        <input onChange={updateContact} name="lName" placeholder="Last Name" />
+        <input onChange={updateContact} name="email" placeholder="Email" />
         <button>Submit</button>
       </form>
     </div>
