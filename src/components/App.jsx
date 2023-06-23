@@ -15,9 +15,9 @@ function App() {
     console.log(`Add button pressed`); 
 
     setTodoArray((prevValue) => {
-      return [...todoArray, inputValue];
+      return [...prevValue, inputValue];
     });
-    
+
     event.preventDefault();
   }
 
