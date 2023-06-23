@@ -11,25 +11,8 @@ function App() {
     const {value, name} = event.target;
 
     setContact((prevValue) => {
-      const newContact = {
-        fName: prevValue.fName,
-        lName: prevValue.lName,
-        email: prevValue.email,
-      };
-
-      switch(name) {
-        case "fName":
-          newContact.fName = value;
-          break;
-        case "lName":
-          newContact.lName = value;
-          break;
-        case "email":
-          newContact.email = value;
-          break;
-        default:
-          return newContact;
-      }
+      const newContact = {...prevValue};
+      newContact[name] = value;
 
       return newContact;
     })
