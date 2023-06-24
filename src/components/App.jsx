@@ -31,7 +31,7 @@ function App() {
       <div>
         <ul>
           {items.map((todoItem, index) => (
-            <ToDoItem key={index} value={todoItem} />
+            <ToDoItem key={index} id={index} value={todoItem} />
           ))}
         </ul>
       </div>
