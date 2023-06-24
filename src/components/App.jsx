@@ -2,20 +2,13 @@ import React, { useState } from "react";
 import ToDoItem from "./ToDoItem";
 import InputArea from "./InputArea";
 
-function App() {
-  const [inputText, setInputText] = useState("");
+function App() { 
   const [items, setItems] = useState([]);
 
-  function handleChange(event) {
-    const newValue = event.target.value;
-    setInputText(newValue);
-  }
-
-  function addItem(event) {
+  function addItem(event, inputText) {
     setItems(prevItems => {
       return [...prevItems, inputText];
     });
-    setInputText("");
     event.preventDefault();
   }
 
@@ -33,8 +26,6 @@ function App() {
         <h1>To-Do List</h1>
       </div>
       <InputArea 
-        handleChange={handleChange}
-        inputText={inputText}
         addItem={addItem}
       />
       <div>
