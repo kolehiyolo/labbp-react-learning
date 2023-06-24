@@ -11,11 +11,12 @@ function App() {
     setInputText(newValue);
   }
 
-  function addItem() {
+  function addItem(event) {
     setItems(prevItems => {
       return [...prevItems, inputText];
     });
     setInputText("");
+    event.preventDefault();
   }
 
   function deleteItem(id) {
@@ -31,7 +32,11 @@ function App() {
       <div className="heading">
         <h1>To-Do List</h1>
       </div>
-      <InputArea />
+      <InputArea 
+        handleChange={handleChange}
+        inputText={inputText}
+        addItem={addItem}
+      />
       <div>
         <ul>
           {items.map((todoItem, index) => (
