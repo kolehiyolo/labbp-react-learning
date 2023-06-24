@@ -1,23 +1,12 @@
-import React, {useState} from "react";
+import React from "react";
 
 function ToDoItem(props) {
-  const [todoStatus, setTodoStatus] = useState(false);
-
-  function updateTodoStatus() {
-    setTodoStatus((prevValue)=>{
-      return !prevValue;
-    })
-  }
-
   return (
     <li 
       id={props.id}
-      onClick={updateTodoStatus}
-      style={
-        {
-          textDecoration: (todoStatus) && 'line-through'
-        }
-      }
+      onClick={() => {
+        props.onChecked(props.id)
+      }}
     >
       {props.value}
     </li>
